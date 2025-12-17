@@ -4,7 +4,7 @@ export default defineConfig({
   title: "cllyw's blog",
   description: "学习心得记录",
   ignoreDeadLinks: true,
-  base: "/cllyw blog/",
+  base: "/cllyw-blog/",
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
