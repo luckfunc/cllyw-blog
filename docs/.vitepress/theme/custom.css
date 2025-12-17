@@ -1,0 +1,407 @@
+/* ===== 第一部分：视觉样式 ===== */
+
+/* 1. 主标题 - 渐变淡蓝色 */
+.VPHero .name {
+  font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #5d9cec 0%, #8ac4ff 50%, #b3d9ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 12px rgba(93, 156, 236, 0.2);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* 2. 副标题 - 中蓝色 */
+.VPHero .text {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* 3. 描述文字 - 淡蓝色 */
+.VPHero .tagline {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.15rem;
+  color: #7db0e8;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.9;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* 4. 主按钮 - 渐变淡蓝色 */
+.VPHero .VPButton.brand {
+  background: linear-gradient(135deg, #6ca8f1 0%, #8ac4ff 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 6px 20px rgba(108, 168, 241, 0.3);
+}
+
+.VPHero .VPButton.brand:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(108, 168, 241, 0.4);
+  background: linear-gradient(135deg, #5d9cec 0%, #7ab4ff 100%);
+}
+
+/* 5. 次按钮 - 淡蓝边框 */
+.VPHero .VPButton.alt {
+  background: transparent;
+  border: 2px solid #8ac4ff;
+  color: #5d9cec;
+}
+
+.VPHero .VPButton.alt:hover {
+  background: rgba(138, 196, 255, 0.1);
+  border-color: #6ca8f1;
+  color: #4a90e2;
+  transform: translateY(-3px);
+}
+
+/* 6. 卡片视觉样式 */
+.VPFeature {
+  border: 1px solid rgba(138, 196, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(93, 156, 236, 0.08);
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(93, 156, 236, 0.15);
+  border-color: rgba(108, 168, 241, 0.3);
+}
+
+/* 7. 卡片标题颜色 */
+.VPFeature .title {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a90e2;
+  transition: color 0.3s ease;
+}
+
+.VPFeature:hover .title {
+  color: #6ca8f1;
+}
+
+/* 8. 卡片描述颜色 */
+.VPFeature .details {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #7db0e8;
+  opacity: 0.9;
+}
+
+/* 9. 图标样式 */
+.VPFeature .icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+/* ===== 第二部分：布局与响应式 ===== */
+
+/* 1. 全局样式 */
+:root {
+  --vp-c-brand: #4a90e2;
+  --vp-c-brand-light: #6ca8f1;
+  --vp-c-brand-lighter: #8ac4ff;
+  --vp-c-brand-dark: #3a7bc8;
+  --vp-c-brand-darker: #2c6cb0;
+}
+
+/* 2. 按钮基础样式 */
+.VPHero .action-button {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.85rem 1.8rem;
+  flex: 0 0 auto;
+  min-width: 160px;
+  text-align: center;
+}
+
+.VPHero .actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* 3. 特性卡片容器布局 */
+.VPFeatures {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.VPFeatures .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 4. 单个卡片布局 */
+.VPFeature {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  min-height: 280px;
+  justify-content: flex-start;
+}
+
+/* 5. 卡片内容布局 */
+.VPFeature .title {
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.VPFeature .details {
+  text-align: center;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.VPFeature .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+}
+
+/* 6. 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPHero .name {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+.VPHero .text {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+.VPHero .tagline {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+.VPHero .actions {
+  animation: fadeInUp 0.8s ease-out 0.7s both;
+}
+.VPFeatures {
+  animation: fadeInUp 0.8s ease-out 0.9s both;
+}
+
+/* 7. 响应式设计 - 平板端 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .VPFeatures .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .VPFeature {
+    max-width: 100%;
+  }
+  .VPHero .name {
+    font-size: 3.2rem;
+  }
+  .VPHero .text {
+    font-size: 1.7rem;
+  }
+}
+
+/* 8. 响应式设计 - 手机端 */
+@media (max-width: 768px) {
+  .VPFeatures .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .VPFeature {
+    max-width: 100%;
+    margin: 0;
+    padding: 1.5rem;
+    min-height: 250px;
+  }
+  .VPHero .name {
+    font-size: 2.8rem;
+    padding: 0 1rem;
+  }
+  .VPHero .text {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+  .VPHero .tagline {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+  .VPHero .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .VPHero .action-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* 9. 响应式设计 - 大屏幕 */
+@media (min-width: 1440px) {
+  .VPFeatures .container {
+    max-width: 1400px;
+  }
+  .VPFeature {
+    max-width: 380px;
+  }
+}
+
+/* 10. 响应式设计 - 小手机 */
+@media (max-width: 480px) {
+  .VPHero .name {
+    font-size: 2.2rem;
+  }
+  .VPHero .text {
+    font-size: 1.3rem;
+  }
+  .VPFeature {
+    padding: 1.2rem;
+    min-height: 220px;
+  }
+  .VPFeature .title {
+    font-size: 1.4rem;
+  }
+  .VPFeature .details {
+    font-size: 0.9rem;
+  }
+}
+/* 修复特性卡片布局问题 - 针对图片中的显示异常 */
+
+/* 1. 修复特性容器宽度和布局 */
+.VPFeatures {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+/* 2. 修复特性卡片网格布局 */
+.VPFeature {
+  width: 100% !important;
+  max-width: 350px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+  flex: 0 0 auto !important;
+}
+
+/* 3. 修复网格容器 */
+.VPFeatures .container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 2rem !important;
+  justify-content: center !important;
+  align-items: start !important;
+  margin: 0 auto !important;
+  max-width: 1200px !important;
+}
+
+/* 4. 确保单个卡片不换行 */
+.VPFeature .container {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* 5. 修复卡片内文本溢出 */
+.VPFeature .title {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+.VPFeature .details {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  max-height: none !important;
+}
+
+/* 6. 修复图片中可能出现的横向滚动条 */
+.VPHome {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* 7. 修复特性图标和文字的对齐 */
+.VPFeature .icon {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* 8. 针对图片中的具体卡片内容调整 */
+.VPFeature:nth-child(1) .details {
+  /* About HTML 卡片 */
+  min-height: 80px !important;
+}
+
+.VPFeature:nth-child(2) .details {
+  /* About CSS 卡片 */
+  min-height: 80px !important;
+}
+
+.VPFeature:nth-child(3) .details {
+  /* About JavaScript 卡片 */
+  min-height: 80px !important;
+}
